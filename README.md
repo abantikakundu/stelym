@@ -42,9 +42,6 @@
 - [Architecture](#architecture)
 - [Tech Stack](#tech-stack)
 - [Smart Contract](#smart-contract)
-  - [Data](#data)
-  - [Functions](#functions)
-  - [Errors](#errors)
 - [Frontend](#frontend)
 - [Getting Started](#getting-started)
 - [CI/CD](#cicd)
@@ -105,36 +102,7 @@ See [**ARCHITECTURE.md**](./ARCHITECTURE.md) for full system diagrams, smart con
 
 ## Smart Contract
 
-Constructor: `__constructor(xlm_token, platform)` — both addresses are immutable.
-
-Native XLM SAC (testnet): `CBFKEXJOQ3ZDJZC66PZYSELB36EHFRBPPGUE6ZW22B2AEDYECVJUH2QZ`
-
-### Data
-
-```rust
-pub struct Project { id, owner, name, description }
-pub struct Tip { id, project_id, from, amount, message, timestamp }
-```
-
-Amounts are stroops (`i128`). 1 XLM = 10_000_000 stroops.
-
-### Functions
-
-| Function | Auth | Description |
-| --- | --- | --- |
-| `create_project(owner, name, description)` | owner | Creates a project, returns sequential id |
-| `get_projects` | — | All projects |
-| `get_project(id)` | — | One project |
-| `get_tips(project_id)` | — | Tip history |
-| `get_balance(project_id)` | — | Unwithdrawn escrow |
-| `tip(from, project_id, amount, message)` | from | Transfer XLM into escrow; no fee |
-| `withdraw(caller, project_id)` | caller must be owner | Pay 99% to owner, 1% to platform; balance → 0 |
-
-Fee is charged **only on withdraw**: `fee = balance / 100`. If `balance < 100` stroops, fee is 0.
-
-### Errors
-
-`EmptyName`, `NameTooLong`, `DescriptionTooLong`, `MessageTooLong`, `InvalidAmount`, `ProjectNotFound`, `NotOwner`, `ZeroBalance`
+See [**smartcontractdoc.md**](./smartcontractdoc.md) for full contract specification, storage layout, function signatures, error codes, and event definitions.
 
 ---
 
