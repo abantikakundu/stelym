@@ -82,7 +82,7 @@ Stelym lets anyone list a project and receive XLM tips on-chain:
 
 ## Architecture
 
-See [**ARCHITECTURE.md**](./ARCHITECTURE.md) for full system diagrams, smart contract storage layouts, and sequence flows.
+See [**ARCHITECTURE.md**](./docs/ARCHITECTURE.md) for full system diagrams, smart contract storage layouts, and sequence flows.
 
 ---
 
@@ -102,7 +102,7 @@ See [**ARCHITECTURE.md**](./ARCHITECTURE.md) for full system diagrams, smart con
 
 ## Smart Contract
 
-See [**smartcontractdoc.md**](./smartcontractdoc.md) for full contract specification, storage layout, function signatures, error codes, and event definitions.
+See [**smartcontractdoc.md**](./docs/smartcontractdoc.md) for full contract specification, storage layout, function signatures, error codes, and event definitions.
 
 ---
 
@@ -116,7 +116,7 @@ See [**smartcontractdoc.md**](./smartcontractdoc.md) for full contract specifica
 
 ## Getting Started
 
-See [**QUICKSETUP.md**](./QUICKSETUP.md) for full step-by-step prerequisites, toolchain installation, contract compilation, frontend setup, and testnet wallet funding instructions.
+See [**QUICKSETUP.md**](./docs/QUICKSETUP.md) for full step-by-step prerequisites, toolchain installation, contract compilation, frontend setup, and testnet wallet funding instructions.
 
 ---
 
@@ -220,7 +220,7 @@ npm run build:bindings
 | 6 | **Mobile responsive frontend development** | ✅ **100% Complete** | [`src/app/globals.css`](./src/app/globals.css), [`screenshots/web_view.png`](./screenshots/web_view.png) & [`screenshots/mobile_view.png`](./screenshots/mobile_view.png) — Mobile-first responsive neobrutalist UI with Dark/Light mode |
 | 7 | **Error handling & loading states** | ✅ **100% Complete** | [`src/components/FeedbackBanner.tsx`](./src/components/FeedbackBanner.tsx), [`src/components/CreateProjectForm.tsx`](./src/components/CreateProjectForm.tsx) — Input boundary validation, wallet notifications, and loading spinners |
 | 8 | **Writing tests for contracts and frontend** | ✅ **100% Complete** | 10 Rust unit tests in [`contracts/notes/src/test.rs`](./contracts/notes/src/test.rs) ([`screenshots/cargo_test.png`](./screenshots/cargo_test.png)) + 17 Vitest tests in [`src/components/__tests__/`](./src/components/__tests__/) ([`screenshots/npm_test.png`](./screenshots/npm_test.png)) |
-| 9 | **Production-ready architecture practices** | ✅ **100% Complete** | [`ARCHITECTURE.md`](./ARCHITECTURE.md) — Detailed component architecture, sequence diagrams, security auth model, and storage keys |
+| 9 | **Production-ready architecture practices** | ✅ **100% Complete** | [`ARCHITECTURE.md`](./docs/ARCHITECTURE.md) — Detailed component architecture, sequence diagrams, security auth model, and storage keys |
 | 10 | **Documentation & demo presentation** | ✅ **100% Complete** | [`README.md`](./README.md), [`LICENSE`](./LICENSE) (Apache-2.0), and [Live Demo](https://stelym.vercel.app) |
 
 ---
