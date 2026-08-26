@@ -13,6 +13,7 @@
 
 <p align="center">
   <a href="https://stelym.vercel.app"><img src="https://img.shields.io/badge/Live%20Demo-stelym.vercel.app-000000?style=for-the-badge" alt="Live Demo" /></a>
+  <a href="https://res.cloudinary.com/ddp0nf4uv/video/upload/v1787768320/InShot_20260826_234029491_yyj3eq.mp4"><img src="https://img.shields.io/badge/Demo%20Video-Watch-E11D48?style=for-the-badge&logo=youtube&logoColor=white" alt="Demo Video" /></a>
   <a href="https://github.com/abantikakundu/stelym/actions/workflows/smart-contract.yml"><img src="https://img.shields.io/github/actions/workflow/status/abantikakundu/stelym/smart-contract.yml?branch=main&style=for-the-badge&label=CI" alt="CI" /></a>
   <a href="https://stellar.org"><img src="https://img.shields.io/badge/Stellar-7D00FF?style=for-the-badge&logo=stellar&logoColor=white" alt="Stellar" /></a>
   <a href="https://developers.stellar.org/docs/build/smart-contracts"><img src="https://img.shields.io/badge/Soroban-000000?style=for-the-badge&logo=rust&logoColor=white" alt="Soroban" /></a>
@@ -48,7 +49,7 @@
 - [Test Results](#test-results)
 - [Demo Video](#demo-video)
 - [Requirements & Verification](#requirements--verification)
-- [Checklist](#checklist)
+- [Submission Checklist](#submission-checklist)
 - [License](#license)
 
 ---
@@ -175,8 +176,10 @@ test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fin
 
 ## Demo Video
 
+https://res.cloudinary.com/ddp0nf4uv/video/upload/v1787768320/InShot_20260826_234029491_yyj3eq.mp4
+
 <p align="center">
-  <video src="https://res.cloudinary.com/ddp0nf4uv/video/upload/v1787768320/InShot_20260826_234029491_yyj3eq.mp4" controls="controls" width="720" style="max-width: 100%;">
+  <video src="https://res.cloudinary.com/ddp0nf4uv/video/upload/v1787768320/InShot_20260826_234029491_yyj3eq.mp4" controls width="720" style="max-width: 100%;">
     <a href="https://res.cloudinary.com/ddp0nf4uv/video/upload/v1787768320/InShot_20260826_234029491_yyj3eq.mp4">Watch Stelym Demo Video</a>
   </video>
 </p>
@@ -202,7 +205,7 @@ test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fin
 
 ---
 
-## Checklist
+## Submission Checklist
 
 - [x] **Public GitHub repository** — [https://github.com/abantikakundu/stelym](https://github.com/abantikakundu/stelym)
 - [x] **README with complete documentation** — Architecture, smart contract spec, setup instructions, and test output
