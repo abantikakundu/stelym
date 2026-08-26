@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-  <a href="vercel-link"><img src="https://img.shields.io/badge/Live%20Demo-stelym.vercel.app-000000?style=for-the-badge" alt="Live Demo" /></a>
+  <a href="https://stelym.vercel.app"><img src="https://img.shields.io/badge/Live%20Demo-stelym.vercel.app-000000?style=for-the-badge" alt="Live Demo" /></a>
   <a href="https://github.com/abantikakundu/stelym/actions/workflows/smart-contract.yml"><img src="https://img.shields.io/github/actions/workflow/status/abantikakundu/stelym/smart-contract.yml?branch=main&style=for-the-badge&label=CI" alt="CI" /></a>
   <a href="https://stellar.org"><img src="https://img.shields.io/badge/Stellar-7D00FF?style=for-the-badge&logo=stellar&logoColor=white" alt="Stellar" /></a>
   <a href="https://developers.stellar.org/docs/build/smart-contracts"><img src="https://img.shields.io/badge/Soroban-000000?style=for-the-badge&logo=rust&logoColor=white" alt="Soroban" /></a>
@@ -20,7 +20,7 @@
 </p>
 
 <p align="center">
-  <strong>Live demo:</strong> <a href="vercel-link">vercel-link</a><br />
+  <strong>Live demo:</strong> <a href="https://stelym.vercel.app">https://stelym.vercel.app</a><br />
   <strong>Repository:</strong> <a href="https://github.com/abantikakundu/stelym">abantikakundu/stelym</a><br />
   <strong>Contract:</strong> <code>CBFKEXJOQ3ZDJZC66PZYSELB36EHFRBPPGUE6ZW22B2AEDYECVJUH2QZ</code>
 </p>
@@ -62,7 +62,7 @@
 
 | Field | Value |
 | --- | --- |
-| **App** | [vercel-link](vercel-link) |
+| **App** | [https://stelym.vercel.app](https://stelym.vercel.app) |
 | **Network** | Stellar Soroban Testnet |
 | **Wallet** | [Freighter](https://www.freighter.app/) (required for create, tip, withdraw) |
 | **Contract ID** | `CBFKEXJOQ3ZDJZC66PZYSELB36EHFRBPPGUE6ZW22B2AEDYECVJUH2QZ` |
@@ -192,7 +192,7 @@ Runs on every push and pull request to `main`. Latest run: [success](https://git
 | `stellar contract build` | Compile `tipping.wasm` |
 | `cargo test --workspace` | 9 contract unit tests |
 
-Frontend deploys automatically on [Vercel](vercel-link).
+Frontend deploys automatically on [Vercel](https://stelym.vercel.app).
 
 ---
 
@@ -251,7 +251,7 @@ npm run build:bindings
 - [x] **Public GitHub repository** — [https://github.com/abantikakundu/stelym](https://github.com/abantikakundu/stelym)
 - [x] **README with complete documentation** — Architecture, smart contract spec, setup instructions, and test output
 - [x] **Minimum 10+ meaningful commits** — Commit history across contract, UI, bindings, and CI
-- [x] **Live demo link (Vercel, Netlify, or similar)** — [vercel-link](vercel-link)
+- [x] **Live demo link (Vercel, Netlify, or similar)** — [https://stelym.vercel.app](https://stelym.vercel.app)
 - [x] **Contract deployment address** — [`CBFKEXJOQ3ZDJZC66PZYSELB36EHFRBPPGUE6ZW22B2AEDYECVJUH2QZ`](https://lab.stellar.org/r/testnet/contract/CBFKEXJOQ3ZDJZC66PZYSELB36EHFRBPPGUE6ZW22B2AEDYECVJUH2QZ)
 - [x] **Transaction hash for contract interaction** — [`19110a22ebe746757972f7a322ab0acf45e9735550c0c3adc5544871b58e0084`](https://stellar.expert/explorer/testnet/tx/19110a22ebe746757972f7a322ab0acf45e9735550c0c3adc5544871b58e0084)
 - [x] **Screenshot showing:**
