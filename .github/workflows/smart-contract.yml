@@ -1,4 +1,4 @@
-name: Smart Contract CI
+name: CI
 
 on:
   push:
@@ -7,8 +7,8 @@ on:
     branches: [main]
 
 jobs:
-  test:
-    name: Build & Test Smart Contract
+  contract:
+    name: Smart Contract (Rust / Soroban)
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -32,3 +32,25 @@ jobs:
 
       - name: Run Contract Tests
         run: cargo test --workspace
+
+  frontend:
+    name: Frontend (Next.js & Vitest)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "npm"
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Frontend Tests
+        run: npm test
+
+      - name: Typecheck & Build
+        run: npm run build
