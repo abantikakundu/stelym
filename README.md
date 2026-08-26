@@ -53,6 +53,7 @@
 - [CI/CD](#cicd)
 - [Test Results](#test-results)
 - [Deploy / Upgrade Contract](#deploy--upgrade-contract)
+- [Requirements & Verification](#requirements--verification)
 - [Checklist](#checklist)
 - [License](#license)
 
@@ -264,6 +265,23 @@ stellar contract bindings typescript \
 
 npm run build:bindings
 ```
+
+---
+
+## Requirements & Verification
+
+| # | Requirement | Status | Proof & Reference Link |
+|---|---|---|---|
+| 1 | **Advanced smart contract development** | ✅ **100% Complete** | [`contracts/notes/src/lib.rs`](./contracts/notes/src/lib.rs) — Soroban SDK v25, persistent & instance storage tiering, custom error enum, stroop precision math |
+| 2 | **Inter-contract communication** | ✅ **100% Complete** | [`contracts/notes/src/lib.rs`](./contracts/notes/src/lib.rs) — Cross-contract calls to Native Stellar Asset Contract (SAC) via `token::TokenClient` |
+| 3 | **Event streaming & real-time updates** | ✅ **100% Complete** | [`contracts/notes/src/lib.rs`](./contracts/notes/src/lib.rs) — Soroban `env.events().publish` for `create`, `tip`, and `withdraw` topics; real-time client state sync |
+| 4 | **CI/CD pipeline setup** | ✅ **100% Complete** | [`.github/workflows/smart-contract.yml`](./.github/workflows/smart-contract.yml) — [GitHub Actions CI](https://github.com/abantikakundu/stelym/actions) dual jobs for contract & frontend verification |
+| 5 | **Smart contract deployment workflow** | ✅ **100% Complete** | [Stellar Explorer](https://lab.stellar.org/r/testnet/contract/CBFKEXJOQ3ZDJZC66PZYSELB36EHFRBPPGUE6ZW22B2AEDYECVJUH2QZ) — Contract `CBFKEXJOQ3ZDJZC66PZYSELB36EHFRBPPGUE6ZW22B2AEDYECVJUH2QZ` + TypeScript bindings in [`lib/bindings`](./lib/bindings) |
+| 6 | **Mobile responsive frontend development** | ✅ **100% Complete** | [`src/app/globals.css`](./src/app/globals.css), [`screenshots/web_view.png`](./screenshots/web_view.png) & [`screenshots/mobile_view.png`](./screenshots/mobile_view.png) — Mobile-first responsive neobrutalist UI with Dark/Light mode |
+| 7 | **Error handling & loading states** | ✅ **100% Complete** | [`src/components/FeedbackBanner.tsx`](./src/components/FeedbackBanner.tsx), [`src/components/CreateProjectForm.tsx`](./src/components/CreateProjectForm.tsx) — Input boundary validation, wallet notifications, and loading spinners |
+| 8 | **Writing tests for contracts and frontend** | ✅ **100% Complete** | 10 Rust unit tests in [`contracts/notes/src/test.rs`](./contracts/notes/src/test.rs) ([`screenshots/cargo_test.png`](./screenshots/cargo_test.png)) + 17 Vitest tests in [`src/components/__tests__/`](./src/components/__tests__/) ([`screenshots/npm_test.png`](./screenshots/npm_test.png)) |
+| 9 | **Production-ready architecture practices** | ✅ **100% Complete** | [`ARCHITECTURE.md`](./ARCHITECTURE.md) — Detailed component architecture, sequence diagrams, security auth model, and storage keys |
+| 10 | **Documentation & demo presentation** | ✅ **100% Complete** | [`README.md`](./README.md), [`LICENSE`](./LICENSE) (Apache-2.0), and [Live Demo](https://stelym.vercel.app) |
 
 ---
 
