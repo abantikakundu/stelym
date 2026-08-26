@@ -1,4 +1,4 @@
-﻿# Stelym Architecture
+# Stelym Architecture
 
 This document provides an overview of the system architecture, smart contract design, data flow, and frontend integration for **Stelym**.
 
@@ -188,3 +188,24 @@ src/
   - `message`: Max 280 characters.
   - `amount`: Must be strictly positive integer ($> 0\text{ stroops}$).
 - **Escrow Integrity**: Tips are locked inside the contract address and cannot be accessed or withdrawn by any party other than the authenticated project owner.
+
+---
+
+## 6. On-Chain Event Streaming System
+
+The smart contract publishes structured Soroban events via `env.events().publish(...)` for all state modifications:
+
+| Event | Topics | Data Payload | Description |
+| --- | --- | --- | --- |
+| `create` | `("create", owner: Address)` | `project_id: u64` | Emitted when a new project is created |
+| `tip` | `("tip", project_id: u64, from: Address)` | `(amount: i128, tip_id: u64)` | Emitted when a public tip is deposited into escrow |
+| `withdraw` | `("withdraw", project_id: u64, caller: Address)` | `(net_amount: i128, platform_fee: i128)` | Emitted upon successful owner withdrawal and fee split |
+
+These events can be streamed in real-time by indexing nodes and client interfaces via the Soroban RPC `getEvents` endpoint.
+
+---
+
+## 7. Testing Architecture
+
+- **Smart Contract Tests**: 10 unit tests in Rust (`cargo test`) utilizing Soroban test environment (`soroban_sdk::Env`), simulated auth (`mock_all_auths()`), and SAC token contract deployment.
+- **Frontend Unit Tests**: 17 component and unit tests powered by **Vitest** + **React Testing Library** + **jsdom** verifying wallet state transitions, input boundary checks, stellar unit conversions (`xlmToStroops`), and theme toggling.
