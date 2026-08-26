@@ -47,9 +47,6 @@
   - [Errors](#errors)
 - [Frontend](#frontend)
 - [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Build and test the contract](#build-and-test-the-contract)
-  - [Run the frontend](#run-the-frontend)
 - [CI/CD](#cicd)
 - [Test Results](#test-results)
 - [Deploy / Upgrade Contract](#deploy--upgrade-contract)
@@ -151,32 +148,7 @@ Fee is charged **only on withdraw**: `fee = balance / 100`. If `balance < 100` s
 
 ## Getting Started
 
-### Prerequisites
-
-- Node.js 22+
-- Rust 1.92 + `wasm32v1-none`
-- Stellar CLI v25+
-- Freighter (for writes)
-
-### Build and test the contract
-
-```bash
-rustup target add wasm32v1-none
-stellar contract build
-cargo test
-```
-
-WASM output: `target/wasm32v1-none/release/tipping.wasm`
-
-### Run the frontend
-
-```bash
-npm install
-npm test
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000). Switch Freighter to **Testnet** and fund via Friendbot.
+See [**QUICKSETUP.md**](./QUICKSETUP.md) for full step-by-step prerequisites, toolchain installation, contract compilation, frontend setup, and testnet wallet funding instructions.
 
 ---
 
