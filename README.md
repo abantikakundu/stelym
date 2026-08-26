@@ -102,9 +102,7 @@ See [**smartcontractdoc.md**](./docs/smartcontractdoc.md) for full contract spec
 
 ## Frontend
 
-- `/` — create project + list (name, owner, escrowed balance)
-- `/projects/[id]` — tip form, history, withdraw (owner only)
-- Unknown id shows **Project not found**
+See [**frontenddocs.md**](./docs/frontenddocs.md) for application routing, UI component architecture, custom hooks, neobrutalist design system, and test suite.
 
 ---
 
