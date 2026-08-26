@@ -171,6 +171,7 @@ WASM output: `target/wasm32v1-none/release/tipping.wasm`
 
 ```bash
 npm install
+npm test
 npm run dev
 ```
 
@@ -182,15 +183,17 @@ Open [http://localhost:3000](http://localhost:3000). Switch Freighter to **Testn
 
 Workflow: [`.github/workflows/smart-contract.yml`](./.github/workflows/smart-contract.yml)
 
-Runs on every push and pull request to `main`. Latest run: [success](https://github.com/abantikakundu/stelym/actions/runs/31873185997).
+Runs on every push and pull request to `main`. Latest run: [success](https://github.com/abantikakundu/stelym/actions).
 
 | Step | Description |
 | --- | --- |
 | Install Rust 1.92 + `wasm32v1-none` | Soroban WASM target |
-| Install Stellar CLI | Official CLI action |
-| `cargo fmt --all -- --check` | Formatting |
+| Install Stellar CLI | Official CLI action (`v25.2.0`) |
+| `cargo fmt --all -- --check` | Formatting check |
 | `stellar contract build` | Compile `tipping.wasm` |
-| `cargo test --workspace` | 9 contract unit tests |
+| `cargo test --workspace` | 10 contract unit tests |
+| `npm test` | 17 Vitest frontend unit tests |
+| `npm run build` | Next.js production build |
 
 Frontend deploys automatically on [Vercel](https://stelym.vercel.app).
 
@@ -198,12 +201,14 @@ Frontend deploys automatically on [Vercel](https://stelym.vercel.app).
 
 ## Test Results
 
+### 1. Smart Contract Tests (`cargo test`)
+
 <p align="center">
-  <img src="screenshots/cargo_test.png" alt="cargo test: 9 passed, 0 failed" width="720" />
+  <img src="screenshots/cargo_test.png" alt="cargo test: 10 passed, 0 failed" width="720" />
 </p>
 
 ```text
-running 9 tests
+running 10 tests
 test test::tip_to_missing_id_fails_with_project_not_found ... ok
 test test::get_projects_is_empty_initially ... ok
 test test::withdraw_with_zero_balance_fails ... ok
@@ -213,8 +218,24 @@ test test::tip_increases_balance_and_stores_amount_message_from ... ok
 test test::tip_does_not_change_platform_wallet_balance ... ok
 test test::withdraw_dust_balance_sends_full_amount_to_owner_with_zero_fee ... ok
 test test::withdraw_by_owner_pays_99_percent_to_owner_and_1_percent_to_platform ... ok
+test test::events_are_emitted_on_create_tip_and_withdraw ... ok
 
-test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.12s
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.11s
+```
+
+### 2. Frontend Tests (`npm test` via Vitest)
+
+<p align="center">
+  <img src="screenshots/npm_test.png" alt="npm test: 17 passed, 0 failed" width="720" />
+</p>
+
+```text
+ RUN  v4.1.11
+
+ Test Files  4 passed (4)
+      Tests  17 passed (17)
+   Start at  20:36:04
+   Duration  99.94s
 ```
 
 ---
@@ -257,7 +278,7 @@ npm run build:bindings
 - [x] **Screenshot showing:**
   - [x] **Mobile responsive UI** — [`screenshots/mobile_view.png`](./screenshots/mobile_view.png)
   - [x] **CI/CD pipeline running** — [GitHub Actions CI](https://github.com/abantikakundu/stelym/actions)
-  - [x] **Test output with 3+ passing tests** — 9 unit tests passing [`screenshots/cargo_test.png`](./screenshots/cargo_test.png)
+  - [x] **Test output with 3+ passing tests** — 10 contract tests ([`screenshots/cargo_test.png`](./screenshots/cargo_test.png)) & 17 frontend tests ([`screenshots/npm_test.png`](./screenshots/npm_test.png))
 - [x] **Demo video link (1–2 minutes)** — [Demo Video](video-link)
 
 ---
