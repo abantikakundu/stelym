@@ -1,0 +1,194 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --ink: #0f172a;
+  --paper: #f8fafc;
+  --punch: #4f46e5;
+  --punch-light: #eef2ff;
+  --mint: #10b981;
+  --mint-light: #ecfdf5;
+  --card-bg: #ffffff;
+  --item-bg: #f1f5f9;
+  --field-bg: #ffffff;
+  --field-disabled: #f1f5f9;
+  --border-color: #0f172a;
+  --shadow-color: #0f172a;
+  --grid-line: rgba(15, 23, 42, 0.04);
+}
+
+.dark,
+[data-theme="dark"] {
+  --background: #0b0f19;
+  --foreground: #f8fafc;
+  --ink: #f8fafc;
+  --paper: #0b0f19;
+  --punch: #6366f1;
+  --punch-light: #1e1b4b;
+  --mint: #10b981;
+  --mint-light: #064e3b;
+  --card-bg: #131927;
+  --item-bg: #192235;
+  --field-bg: #0d121d;
+  --field-disabled: #161e2f;
+  --border-color: #2b3851;
+  --shadow-color: #000000;
+  --grid-line: rgba(255, 255, 255, 0.025);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
+  --color-punch: var(--punch);
+  --color-mint: var(--mint);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 28px 28px;
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), ui-sans-serif, sans-serif;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input,
+textarea,
+button,
+a[role="button"] {
+  font: inherit;
+}
+
+button:not(:disabled),
+a {
+  cursor: pointer;
+}
+
+.nb-card {
+  background: var(--card-bg);
+  border: 2.5px solid var(--border-color);
+  box-shadow: 5px 5px 0 0 var(--shadow-color);
+  color: var(--foreground);
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nb-card-punch {
+  background: var(--punch);
+  color: #ffffff;
+  border: 2.5px solid var(--border-color);
+  box-shadow: 5px 5px 0 0 var(--shadow-color);
+}
+
+.dark .nb-card-punch {
+  background: #1b233a;
+  border-color: #3b4c6e;
+  color: #f1f5f9;
+}
+
+.nb-card-mint {
+  background: var(--mint);
+  color: #ffffff;
+  border: 2.5px solid var(--border-color);
+  box-shadow: 5px 5px 0 0 var(--shadow-color);
+}
+
+.dark .nb-card-mint {
+  background: #0d2c22;
+  border-color: #1a5643;
+  color: #6ee7b7;
+}
+
+.nb-field {
+  width: 100%;
+  border: 2.5px solid var(--border-color);
+  background: var(--field-bg);
+  padding: 0.65rem 0.85rem;
+  font-size: 0.875rem;
+  color: var(--foreground);
+  outline: none;
+  box-shadow: 3px 3px 0 0 var(--shadow-color);
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nb-field:focus {
+  border-color: var(--punch);
+  box-shadow: 4px 4px 0 0 var(--punch);
+}
+
+.nb-field:disabled {
+  background: var(--field-disabled);
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 0.75;
+}
+
+.nb-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 2px solid var(--border-color);
+  padding: 0.15rem 0.55rem;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Dark mode utility overrides */
+.dark .bg-white {
+  background-color: var(--card-bg);
+}
+
+.dark .bg-paper {
+  background-color: var(--item-bg);
+}
+
+.dark .border-ink {
+  border-color: var(--border-color);
+}
+
+.dark .text-ink {
+  color: var(--foreground);
+}
+
+.dark .text-ink\/75,
+.dark .text-ink\/70 {
+  color: #94a3b8;
+}
+
+.dark .text-ink\/60,
+.dark .text-ink\/55 {
+  color: #64748b;
+}
+
+.dark .text-ink\/50,
+.dark .text-ink\/40 {
+  color: #475569;
+}
+
+.dark .shadow-\[5px_5px_0_0_\#111111\],
+.dark .shadow-\[6px_6px_0_0_\#111111\],
+.dark .shadow-\[3px_3px_0_0_\#111111\],
+.dark .shadow-\[4px_4px_0_0_\#111111\],
+.dark .shadow-\[2px_2px_0_0_\#111111\] {
+  box-shadow: 4px 4px 0 0 #000000;
+}
+
+.dark .hover\:shadow-\[3px_3px_0_0_\#111111\]:hover,
+.dark .hover\:shadow-\[4px_4px_0_0_\#111111\]:hover,
+.dark .hover\:shadow-\[2px_2px_0_0_\#111111\]:hover {
+  box-shadow: 2px 2px 0 0 #000000;
+}
