@@ -46,6 +46,7 @@
 - [Getting Started](#getting-started)
 - [CI/CD](#cicd)
 - [Test Results](#test-results)
+- [Demo Video](#demo-video)
 - [Requirements & Verification](#requirements--verification)
 - [Checklist](#checklist)
 - [License](#license)
@@ -172,6 +173,18 @@ test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fin
 
 ---
 
+## Demo Video
+
+<p align="center">
+  <video src="https://res.cloudinary.com/ddp0nf4uv/video/upload/v1787768320/InShot_20260826_234029491_yyj3eq.mp4" controls="controls" width="720" style="max-width: 100%;">
+    <a href="https://res.cloudinary.com/ddp0nf4uv/video/upload/v1787768320/InShot_20260826_234029491_yyj3eq.mp4">Watch Stelym Demo Video</a>
+  </video>
+</p>
+
+> 🎬 **Direct Video Link**: [Watch Full 90-Second Walkthrough Video](https://res.cloudinary.com/ddp0nf4uv/video/upload/v1787768320/InShot_20260826_234029491_yyj3eq.mp4)
+
+---
+
 ## Requirements & Verification
 
 | # | Requirement | Status | Proof & Reference Link |
@@ -201,7 +214,7 @@ test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fin
   - [x] **Mobile responsive UI** — [`screenshots/mobile_view.png`](./screenshots/mobile_view.png)
   - [x] **CI/CD pipeline running** — [GitHub Actions CI](https://github.com/abantikakundu/stelym/actions)
   - [x] **Test output with 3+ passing tests** — 10 contract tests ([`screenshots/cargo_test.png`](./screenshots/cargo_test.png)) & 17 frontend tests ([`screenshots/npm_test.png`](./screenshots/npm_test.png))
-- [x] **Demo video link (1–2 minutes)** — [Demo Video](video-link)
+- [x] **Demo video link (1–2 minutes)** — [Watch Demo Video](https://res.cloudinary.com/ddp0nf4uv/video/upload/v1787768320/InShot_20260826_234029491_yyj3eq.mp4)
 
 ---
 
