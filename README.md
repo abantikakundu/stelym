@@ -46,7 +46,6 @@
 - [Getting Started](#getting-started)
 - [CI/CD](#cicd)
 - [Test Results](#test-results)
-- [Deploy / Upgrade Contract](#deploy--upgrade-contract)
 - [Requirements & Verification](#requirements--verification)
 - [Checklist](#checklist)
 - [License](#license)
@@ -169,33 +168,6 @@ test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fin
       Tests  17 passed (17)
    Start at  20:36:04
    Duration  99.94s
-```
-
----
-
-## Deploy / Upgrade Contract
-
-```bash
-stellar contract build
-
-stellar contract deploy \
-  --wasm target/wasm32v1-none/release/tipping.wasm \
-  --network testnet \
-  --source YOUR_KEY_NAME \
-  -- \
-  --xlm-token CBFKEXJOQ3ZDJZC66PZYSELB36EHFRBPPGUE6ZW22B2AEDYECVJUH2QZ \
-  --platform YOUR_PLATFORM_G_ADDRESS
-```
-
-Then update `CONTRACT_ID` in `src/lib/stellar.ts` and regenerate bindings:
-
-```bash
-stellar contract bindings typescript \
-  --wasm target/wasm32v1-none/release/tipping.wasm \
-  --output-dir lib/bindings \
-  --overwrite
-
-npm run build:bindings
 ```
 
 ---
