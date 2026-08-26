@@ -22,7 +22,7 @@ jobs:
           components: rustfmt
 
       - name: Install Stellar CLI
-        uses: stellar/stellar-cli@main
+        uses: stellar/stellar-cli@v25.2.0
 
       - name: Format Check
         run: cargo fmt --all -- --check
