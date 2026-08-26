@@ -58,13 +58,7 @@
 | Field | Value |
 | --- | --- |
 | **App** | [https://stelym.vercel.app](https://stelym.vercel.app) |
-| **Network** | Stellar Soroban Testnet |
-| **Wallet** | [Freighter](https://www.freighter.app/) (required for create, tip, withdraw) |
-| **Contract ID** | `CBFKEXJOQ3ZDJZC66PZYSELB36EHFRBPPGUE6ZW22B2AEDYECVJUH2QZ` |
-| **Explorer** | [Stellar Lab](https://lab.stellar.org/r/testnet/contract/CBFKEXJOQ3ZDJZC66PZYSELB36EHFRBPPGUE6ZW22B2AEDYECVJUH2QZ) |
-| **RPC** | `https://soroban-testnet.stellar.org` |
-
-Reads work without a wallet. Writes need Freighter on **Testnet**, funded via [Friendbot](https://laboratory.stellar.org/#account-creator?network=test).
+| **Contract ID** | [`CBFKEXJOQ3ZDJZC66PZYSELB36EHFRBPPGUE6ZW22B2AEDYECVJUH2QZ`](https://lab.stellar.org/r/testnet/contract/CBFKEXJOQ3ZDJZC66PZYSELB36EHFRBPPGUE6ZW22B2AEDYECVJUH2QZ) |
 
 ---
 
