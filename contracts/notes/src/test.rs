@@ -222,3 +222,22 @@ fn withdraw_with_zero_balance_fails() {
     let result = setup.client.try_withdraw(&setup.owner, &id);
     assert_eq!(result, Err(Ok(Error::ZeroBalance)));
 }
+
+#[test]
+fn events_are_emitted_on_create_tip_and_withdraw() {
+    let setup = setup();
+    let name = String::from_str(&setup.env, "Event Project");
+    let desc = String::from_str(&setup.env, "Testing events");
+    let id = setup.client.create_project(&setup.owner, &name, &desc);
+
+    mint(&setup, &setup.tipper, 500);
+    setup.client.tip(
+        &setup.tipper,
+        &id,
+        &500,
+        &String::from_str(&setup.env, "Event Tip"),
+    );
+
+    setup.client.withdraw(&setup.owner, &id);
+    assert_eq!(setup.client.get_balance(&id), 0);
+}

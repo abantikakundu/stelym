@@ -1,7 +1,8 @@
 #![no_std]
 
 use soroban_sdk::{
-    contract, contracterror, contractimpl, contracttype, token, Address, Env, String, Vec,
+    contract, contracterror, contractimpl, contracttype, symbol_short, token, Address, Env, String,
+    Vec,
 };
 
 const NAME_MAX: u32 = 64;
@@ -90,7 +91,7 @@ impl TippingContract {
 
         let project = Project {
             id,
-            owner,
+            owner: owner.clone(),
             name,
             description,
         };
@@ -106,6 +107,8 @@ impl TippingContract {
         env.storage()
             .persistent()
             .set(&DataKey::NextProjectId, &(id + 1));
+
+        env.events().publish((symbol_short!("create"), owner), id);
 
         Ok(id)
     }
@@ -201,7 +204,7 @@ impl TippingContract {
         let recorded = Tip {
             id: tip_id,
             project_id,
-            from,
+            from: from.clone(),
             amount,
             message,
             timestamp: env.ledger().timestamp(),
@@ -222,6 +225,9 @@ impl TippingContract {
         env.storage()
             .persistent()
             .set(&DataKey::ProjectTipIds(project_id), &ids);
+
+        env.events()
+            .publish((symbol_short!("tip"), project_id, from), (amount, tip_id));
 
         Ok(())
     }
@@ -261,6 +267,10 @@ impl TippingContract {
         env.storage()
             .persistent()
             .set(&DataKey::Balance(project_id), &0i128);
+
+        env.events()
+            .publish((symbol_short!("withdraw"), project_id, caller), (net, fee));
+
         Ok(())
     }
 }
